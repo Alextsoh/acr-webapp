@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: tsochliasacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d9190e7b907b4e60bae181bc52ae0697 }}/image:${{ github.sha }}
-        file: ./dokerfile
+        file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
