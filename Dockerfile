@@ -10,6 +10,6 @@ RUN npm install --omit=dev
 # copy the rest
 COPY . .
 
-ENV PORT=8080
+#ENV PORT=8080
 EXPOSE 8080
 CMD ["npm","start"]
