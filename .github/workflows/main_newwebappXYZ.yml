@@ -48,4 +48,4 @@ jobs:
         app-name: 'newwebappXYZ'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6b27dccb93c94473bca795f674f6275e }}
-        images: 'myacrdemoxyz.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_3b1b8fd7f5434626b7d7a492385eee4e }}/imageF:${{ github.sha }}'
+        images: 'myacrdemoxyz.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_3b1b8fd7f5434626b7d7a492385eee4e }}/imagef:${{ github.sha }}'
