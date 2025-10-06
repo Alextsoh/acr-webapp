@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://tsochliasacr.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_02f36ed754a64049b582da91294777fb }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_8d1b922ae3bf4bb29f3037bd39cea4e9 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_d9530dfd581c4ad998cd85e8b5f95979 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_355b7f555bab4709817f7e5eea39131a }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: tsochliasacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_02f36ed754a64049b582da91294777fb }}/image beta:${{ github.sha }}
+        tags: tsochliasacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d9530dfd581c4ad998cd85e8b5f95979 }}/tsochliasacr/imagebeta:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'tsochliaswebapp1'
         slot-name: 'beta'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_ad36e0fcbf8a4a599b2bb80d8962a37c }}
-        images: 'tsochliasacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_02f36ed754a64049b582da91294777fb }}/image beta:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6115f91a8cc4446da6d8e82c70b53483 }}
+        images: 'tsochliasacr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d9530dfd581c4ad998cd85e8b5f95979 }}/tsochliasacr/imagebeta:${{ github.sha }}'
