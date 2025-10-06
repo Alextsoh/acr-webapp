@@ -6,7 +6,7 @@ name: Build and deploy container app to Azure Web App - tsochliaswebapp1(beta)
 on:
   push:
     branches:
-      - main
+      - beta
   workflow_dispatch:
 
 jobs:
